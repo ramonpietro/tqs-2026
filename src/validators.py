@@ -39,6 +39,7 @@ def validar_email(email: str | None) -> bool:
         return False
     return _REGEX_EMAIL.match(email) is not None
 
+
 def _calcular_dv_cnpj(digitos: str, pesos: list[int]) -> int:
     soma = sum(int(d) * p for d, p in zip(digitos, pesos, strict=True))
     resto = soma % 11

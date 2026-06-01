@@ -25,3 +25,9 @@ def test_aceita_email_valido():
 
 def test_rejeita_email_sem_arroba():
     assert validar_email("semarroba.com") is False
+
+def test_aceita_cpf_com_espacos_nas_pontas():
+    assert validar_cpf("  111.444.777-35  ") is True
+
+def test_aceita_email_com_espacos_nas_pontas():
+    assert validar_email("  aluno@ufopa.edu.br  ") is True

@@ -72,27 +72,6 @@
             e.preventDefault();
             const cpf = document.getElementById("cpf").value;
             const email = document.getElementById("email").value;
-            const resposta = await fetch("/validar", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ cpf, email }),
-            });
-            const dados = await resposta.json();
-            const div = document.getElementById("resultado");
-            div.innerHTML = `
-                <div class="resultado ${dados.cpf_valido ? "valido" : "invalido"}">
-                    CPF: ${dados.cpf_valido ? "válido" : "inválido"}
-                </div>
-                <div class="resultado ${dados.email_valido ? "valido" : "invalido"}">
-                    E-mail: ${dados.email_valido ? "válido" : "inválido"}
-                </div>
-            `;
-        });
-
-        document.getElementById("formulario").addEventListener("submit", async (e) => {
-            e.preventDefault();
-            const cpf = document.getElementById("cpf").value;
-            const email = document.getElementById("email").value;
             const telefone = document.getElementById("telefone").value;
             const resposta = await fetch("/validar", {
                 method: "POST",

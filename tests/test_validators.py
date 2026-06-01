@@ -46,6 +46,7 @@ def test_rejeita_cnpj_com_todos_digitos_iguais():
 def test_rejeita_cnpj_vazio():
     assert validar_cnpj("") is False
 
+
 def test_aceita_telefone_valido_com_mascara():
     assert validar_telefone("(11) 91234-5678") is True
 

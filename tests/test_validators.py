@@ -26,6 +26,7 @@ def test_aceita_email_valido():
 def test_rejeita_email_sem_arroba():
     assert validar_email("semarroba.com") is False
 
+
 def test_aceita_telefone_valido_com_mascara():
     assert validar_telefone("(11) 91234-5678") is True
 
